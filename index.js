@@ -20,7 +20,7 @@ const httpServer = createServer(app);
 const connectedUsers = {};
 
 const io = new Server(httpServer, {
-  cors: { origin: ["http://localhost:3000"] },
+  cors: { origin: ["http://localhost:3000", 'https://bookworms2.herokuapp.com'] },
 });
 
 io.on("connection", (socket) => {
@@ -80,9 +80,8 @@ app.get("/", (req, resp) => {
   resp.send("home");
 });
 
+const port = process.env.PORT || 5000;
 
-app.listen(5000, () => {
+httpServer.listen(port, () => {
    console.log("server started");
  });
-
-
