@@ -53,7 +53,7 @@ const stripe = require("stripe")(stripe_sk);
 
 app.use(
   cors({
-     origin:['http://localhost:3000']
+     origin:['https://bookworms2.herokuapp.com']
   })
 )
 
