@@ -20,7 +20,7 @@ const httpServer = createServer(app);
 const connectedUsers = {};
 
 const io = new Server(httpServer, {
-  cors: { origin: ["http://localhost:3000", 'https://bookworms2.herokuapp.com'] },
+  cors: { origin: ['https://bookworms2.herokuapp.com'] },
 });
 
 io.on("connection", (socket) => {
